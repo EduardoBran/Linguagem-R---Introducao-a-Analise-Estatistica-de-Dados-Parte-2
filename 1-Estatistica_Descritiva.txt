@@ -1,0 +1,58 @@
+Estatística Descritiva
+
+- Uma das áreas mais importantes da Estatística
+- Mais fáceis de compreender e mais utilizada
+- Trabalhamos com estatísica descritiva no começo da análise
+
+
+3 grades áreasda estatística:
+
+- Estatística Descritiva
+- Probabildiade
+- Inferência Estatística
+
+
+
+* A Estatística Descritiva é a etapa inicial da análise utilizada para descrever e resumir os dados.
+
+
+
+        População    --------------------------------------> Amostra
+     Características						|							
+	  |							|
+	  |							|
+	  |		 		              Análise   |
+	  |				             Descritiva |
+	  |							|
+	  |							|
+	  |							|
+     Conclusões		  Inferência estatística		|
+      sobre as      <-------------------------------- Informações contidas		
+   características						nos dados
+    da população
+
+
+
+
+* Com a Estatística Descritiva podemos descrever os dados usando 2 tipos principais de medidas:
+
+
+     Medidas de Tendência Central				Medidas de Dispersão
+
+             Média						    Desvio Padrão
+	    Mediana						      Variância	
+             Moda						Coeficiente de Variação
+	 Valor Máximo
+       	 Valor Mínimo
+           Amplitude
+
+
+
+
+
+
+
+
+
+
+
