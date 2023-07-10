@@ -47,9 +47,9 @@ mean(Maq1)  # 181.24
 mean(Maq2)  # 181.4
 mean(Maq3)  # 182
 
-# - Neste caso apenas com os valores das médidas de cada corte de máquina, não conseguiríamos responder a pergunta de negócio,
+# - Neste caso apenas com os valores das médias de cada corte de máquina, não conseguiríamos responder a pergunta de negócio,
 #   nem se usássemos a mediana ou moda porque não temos como saber a variebilidade (poderíamos ter valores extremos que
-#   estão afetando a média)
+#   estariam afetando a média)
 
 sd(Maq1)    # 0.7368853
 sd(Maq2)    # 0.8514693
@@ -57,6 +57,19 @@ sd(Maq3)    # 1.240967
 
 # - Agora com os resultados do desvio padrão de cada máquina, detectamos que a Maq1 tem o menor valor de variabilidade e
 #   por isso tem um nível maior de precisão.
+
+
+# exemplo 2
+
+dados2 = c(1,2,1,1,2,1,2,1,2,1,2,1,2,1,2,3,1,3,1,3,1,3,1,2,1,2,2,2,2,2,2,3,3,3,3,2,2,2,2,1,1,1,1)
+dados3 = c(123123,1,312312,2,3123123,2,12312321,5,312312,1,12312321,2)
+
+sd(dados2)
+sd(dados3)
+
+# dados2 tem um desvio padrão de  0.7418811 e por isso tem uma menor variabilidade dos valores.
+# dados3 tem um desvio padrão de  4724062e por isso tem uma altavariabilidade dos valores.
+
 
 
 
