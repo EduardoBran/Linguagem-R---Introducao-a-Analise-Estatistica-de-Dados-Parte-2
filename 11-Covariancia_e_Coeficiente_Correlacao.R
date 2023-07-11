@@ -98,3 +98,31 @@ cor(x, y)      # -0.8676594
 
 
 
+
+
+
+
+
+
+
+
+# Preço da casa com base no numero de quartos
+
+# Criando o dataframe
+
+set.seed(128)
+
+df <- data.frame(
+  id = 1:50,
+  preco_casa = runif(50, 100000, 500000),
+  num_quartos = sample(1:5, 50, replace = TRUE),
+  num_banheiros = sample(1:3, 50, replace = TRUE),
+  cidade = sample(c("São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba"), 50, replace = TRUE)
+)
+
+# Formatar a coluna "preco_casa"
+df$preco_casa <- format(df$preco_casa, decimal.mark = ",", big.mark = ".", trim = TRUE, nsmall = 2)
+
+# Visualizando o dataframe
+View(df)
+
