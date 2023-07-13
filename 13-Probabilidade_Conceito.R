@@ -203,4 +203,25 @@ print(0.076*100)
 
 
 
+#########   5 Regras Básicas que Regem a Teoria da Probabilidade ######### 
+
+
+# 1ª regra - Se P(A) = 1, então podemos garantir que o evento A ocorrerá.
+
+# 2ª regra - Se P(A) = 0, então podemos garantir que o evento A NÃO ocorrerá.
+
+# 3ª regra - A probabilidade de qualquer evento sempre será entre 0 e 1. Probabilidades nunca podem ser negativas ou maior que 1.
+
+# 4ª regra - A soma de todas as probabilidades para um evento simples, em um espaço de amostra, será igual a 1.
+#            Em outras palavras, a probabilidade de que algo aconteça é certa (1), pois um dos eventos dentro do espaço de amostra ocorrerá 
+#            obrigatoriamente. Por exemplo, se tivermos um dado justo de seis lados, o espaço de amostra é {1, 2, 3, 4, 5, 6}, e a probabilidade
+#            de rolar qualquer um desses números é igual a 1/6. Somando todas as probabilidades, obtemos 1.
+
+# 5ª regra - O complemento do evento A é definido como todos os resultados em um espaço de amostra, que não fazem parte do evento A.
+#            Por exemplo, se a probabilidade de chover em um determinado dia for de 0,3 (ou 30%), a probabilidade de não chover
+#            (complemento de chover) será de 0,7 (ou 70%), pois a soma das duas probabilidades deve ser igual a 1.
+#            Ou seja:
+
+# P(A) = 1 - P(A´), onde P(A´) é o complemento do evento A.
+
 
