@@ -16,3 +16,96 @@ getwd()
 
 
 
+# - A Probabilidade pode ser dividida em alguns tipos:
+
+
+
+### Probabilidade Clássica
+
+# - É usada quando nós sabemos o número de possíveis resultados do evento de interesse e podemos calcular a probabilidade 
+#   do evento com a seguinte fórmula:
+
+
+# P(A) = Número de possíveis resultados do evento A / número total de possíveis resultados dentro do espaço de amostra
+
+# - Onde: P(A) é a probabilidade de um evento ocorrer.
+
+
+# - Simplicando a fórmula:
+
+# P(A) = s / n
+
+# - Onde: s = nº de possiveis resultados e n = nº de resultados possiveis dentro do espaço da amostra.
+
+
+
+
+# Exemplo 1: Um dado possui um espaço de amotra igual a {1, 2, 3, 4, 5, 6}, com 6 possíveis resultados.
+#            Qual seria a probabilidade de, ao jogarmos o dado, conseguirmos que o número 5 seja a face em evidência ?
+
+# - Nesse caso, o número de casos favoráveis é 1, pois há apenas uma face do dado com o número 5. O número total de casos possíveis é 6,
+#   pois o dado possui 6 faces.
+
+
+# P(A) = 1 / 6 = 0.167
+
+# Ou seja, 16.17% de probabilidade de jogarmos um dado e conseguirmos a face com o número 5.
+
+
+
+
+# Exemplo 2: Qual a probabilidade de se obter um 3 ou 4 em uma jogada de um dado equilibrado ?
+
+# - Nesse caso, o número de de possibilidades é 2 ("obter 3 ou 4"), logo o valor de s = 2. O número total de casos possíveis é 6,
+#   pois o dado possui 6 faces.
+
+
+# P(A) = 2 / 6 = 0.33
+
+# Ou seja, 33.33% de probilidade de se obter um 3 ou 4 em uma jogada de um dado equilibrado.
+
+
+
+
+# Exemplo 3: Uma urna contém 8 bolas, numeradas de 1 a 8. Qual é a probabilidade de retirar uma bola com um número par?
+
+# - Nº de possíveis resultados: 4 {2, 4, 6, 8}
+# - Nº total de resultados possíveis: 8
+
+
+# P(A) = 4 / 8 = 0.5
+
+# Ou seja, 50% de probilidade.
+
+
+
+
+# Exemplo 4: Uma moeda justa é lançada. Qual é a probabilidade de obter "cara"?
+
+# - Nº de possíveis resultados: 1 {cara}
+# - Nº total de resultados possíveis: 2
+
+
+# P(A) = 1 / 2 = 0.5
+
+# Ou seja, 50% de probilidade.
+
+
+
+
+# Exemplo 5: Um baralho padrão contém 52 cartas. Qual é a probabilidade de tirar um ás?
+
+# - Nº de possíveis resultados: 4 {as ouro, as copas, as espada, as paus}
+# - Nº total de resultados possíveis: 52
+
+# P(A) = 4 / 52 = 0.076
+
+print(0.076*100)
+
+# Ou seja, 7.6% de probilidade.
+
+
+
+
+
+
