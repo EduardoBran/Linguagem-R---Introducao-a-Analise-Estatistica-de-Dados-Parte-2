@@ -16,11 +16,14 @@ getwd()
 
 
 
+
 # - A Probabilidade pode ser dividida em alguns tipos:
 
 
 
-### Probabilidade Clássica
+
+#########   Probabilidade Classíca   #########   
+
 
 # - É usada quando nós sabemos o número de possíveis resultados do evento de interesse e podemos calcular a probabilidade 
 #   do evento com a seguinte fórmula:
@@ -103,6 +106,83 @@ getwd()
 print(0.076*100)
 
 # Ou seja, 7.6% de probilidade.
+
+
+
+
+
+# - Quando sabemos os possíveis resultados de um evento, utilizamos a Probabilidade Clássica. 
+
+
+
+
+
+#########   Probabilidade Empírica   #########   
+
+
+# - Quando não sabemos os possíveis resultados de um evento, utilizamos a Probabilidade Empírica.
+
+# - Para calcularmos a probabilidade empírica, usamos a fórmula:
+
+
+# P(A) = Frequência em que o vento A ocorre / número total de observações
+
+
+# onde P(A) é a probabilidade de um evento ocorrer.
+
+
+# Exemplo 1: Experimento da Loja de Livros:
+#            Qual a probabilidade de que uma pessoa que entre na loja faça uma compra ?
+
+# - A probabilidade clássica não poderia nos audar aqui, pois não temos informações sobre porque as pessoas fazem uma compra e nem
+#   quando elas fazem uma compra. Usamos então a probabilidade empírica para contar quantas pessoas que entram na loja finalizam uma compra.
+
+# Resposta: Supondo que 100 pessoas entraram na loja e que 15 fizeram uma compra, a probabilidade empírica seria dada pela seguinte fórmula:
+
+
+# P(A) = 15 / 100 = 0.15
+
+# Ou seja, 15%.
+
+
+
+
+# Exemplo 2: Em uma escola, registramos o número de alunos que tiraram uma nota acima de 8 em uma prova. Dos 200 alunos que fizeram a
+#           prova, 50 deles obtiveram uma nota acima de 8. Qual é a probabilidade empírica de um aluno tirar uma nota acima de 8 nessa prova?
+
+
+# P(A) = 50 / 200 = 0.25
+
+# Ou seja, 25%.
+
+
+
+
+# Exemplo 3: Em um evento esportivo, registramos o número de vezes em que o time A venceu em uma temporada. Dos 30 jogos que o time A
+#            disputou, venceu em 15 deles. Qual é a probabilidade empírica de o time A vencer em um jogo?
+
+
+# P(A) = 15 /30 = 0.50
+
+# Ou seja, 50%.
+
+
+
+
+# Exemplo 4: Em um experimento de laboratório, registramos o número de vezes que um determinado reagente químico apresentou uma reação
+#            positiva. Realizamos o experimento 100 vezes e obtivemos 75 reações positivas. Qual é a probabilidade empírica de obter uma
+#            reação positiva com esse reagente?
+
+
+# P(A) = 75 / 100 = 0.75
+
+# Ou seja, 75%.
+
+
+
+
+
+
 
 
 
