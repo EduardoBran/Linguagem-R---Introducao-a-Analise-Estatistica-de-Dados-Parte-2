@@ -184,6 +184,21 @@ print(0.076*100)
 
 
 
+#########   Probabilidade Subjetiva   ######### 
+
+
+# - Usamos Probabilidade Subjetiva quando:
+
+#   -> Probabilidades clássicas ou empíricas não podem ser usadas.
+#   -> Dados ou experimentos não estão disponíveis para calcular a probabilidade.
+#   -> Neste caso, confiamos na experiência ou julgamento para estimar as probabilidades.
+
+
+# Exemplo: Diretor de Marketing:
+#          Um experiente Diretor de Marketing estima que há 50% de probabilidade de que o maior concorrente da empresa reduza seus
+#          preços no mês seguinte.
+
+
 
 
 
