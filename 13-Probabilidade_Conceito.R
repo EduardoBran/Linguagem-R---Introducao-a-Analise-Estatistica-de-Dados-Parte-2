@@ -225,3 +225,51 @@ print(0.076*100)
 # P(A) = 1 - P(A´), onde P(A´) é o complemento do evento A.
 
 
+
+
+
+
+# - As regras que estudamos acima para Probabilidade se referem a um único evento. Mas e se tivermos mais eventos?
+
+
+
+
+
+#########   Regras Básicas da Probabilidade Para Mais de Um Evento ######### 
+
+
+# - No mundo dos negócios, os eventos raramente são simples e frequentemente envolvem dois ou mais eventos.
+
+# Exemplo: O gerente de um ganco, pode estar interessado em saber a probabilidade de um cliente com histórico de crédito ruim não pagar
+#          o empréstimo de cheque especial.
+
+# - Neste caso, temos 2 eventos:
+
+#   -> Evento A - cliente não paga o cheque especial.
+#   -> Evento B - cliente tem um histórico de crédito ruim.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
