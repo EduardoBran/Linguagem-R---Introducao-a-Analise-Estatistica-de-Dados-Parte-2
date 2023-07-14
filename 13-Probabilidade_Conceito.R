@@ -4,6 +4,8 @@
 setwd("C:/Users/Julia/Desktop/CienciaDeDados/1.Big-Data-Analytics-com-R-e-Microsoft-Azure-Machine-Learning/9.Introducao-a-Analise-Estatistica-de-Dados---Parte-2")
 getwd()
 
+library(dplyr)
+
 
 
 # - Primeiramente vamos perguntar: Probabilidade e Possibilidade são a mesma coisa ?
@@ -257,7 +259,9 @@ print(0.076*100)
 #  -> Adição de Eventos
 
 
-# Intersecção de Eventos: a intersecção de eventos A e B representam o número de vezes que os eventos A e B ocorrem ao mesmo tempo.
+
+
+#### Intersecção de Eventos: a intersecção de eventos A e B representam o número de vezes que os eventos A e B ocorrem ao mesmo tempo.
 
 
 # Vamos usar uma Tabela de Contingência para exemplificar melhor.
@@ -283,40 +287,20 @@ print(0.076*100)
 
 # Com base nos 2 eventos, vamos calcular a probabilidade do Evento B ocorrer:
 
-#     P(A) = 11200 / 19280 = 0.58 x 100 = 58% (ou seja, 58% do aluno ter sido admitido no curso de Medicina)
+#      P(A) = 11200 / 19280 = 0.58 x 100 = 58% (ou seja, 58% do aluno ter sido admitido no curso de Medicina)
 
 
 # - Até aqui aplicamos as regras de probabilidade de um evento simples (Evento A e Evento B são eventos simples)
 
 # - Só que o que precisamos agora é uma última probabilidade que na verdade representa os Eventos A e B:
 
-
 #   Qual a probabilidade de um Estudante de São Paulo, ser admitido em um curso de Medicina ?
+
 
 #   Para isso calculamos a intersecção dos eventos A e B.
 
 #   P(A) = 7500 / 19280 = 0.39 x 100 = 39%
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Evento A
-
-library(dplyr)
 
 df <- data.frame(cidade = c('RJ', 'SP', 'MG', 'Total'), engenharia = c(1500, 5600, 980, 8080),
                  medicina = c(2300, 7500, 1400, 11200), total = c(3800, 13100, 2380, 19280))
@@ -326,21 +310,59 @@ df_evento_a <-
   filter(cidade == 'SP') %>% 
   select(total)
 
-probabilidade_a = df_evento_a / 19280  # 0.67
-
-# ou seja 67%
+probabilidade_a = df_evento_a / 19280  # 13100 / 19280  ou seja 67%
 
 df_evento_b <- 
   df %>% 
   filter(cidade == "Total") %>% 
   select(medicina)
 
-probabilidade_b = df_evento_b / 19280    # 0.58
+probabilidade_b = df_evento_b / 19280  # 11200 / 19280  ou seja 58%
 
-# ou seja 58%
+df_evento_c <- 
+  df %>% 
+  filter(cidade == 'SP') %>% 
+  select(medicina)
+
+probabilidade_c = df_evento_c / 19280  # 7500 / 19280   ou seja 39%
 
 
 
+
+#### União de Eventos: a união dos Eventos A e B representam o nº de vezes em que o evento A ou evento B ocorrem juntos.
+#                      (diferente da intersecção que é quando o evento ocorre ao mesmo tempo).
+
+
+# Vamos usar uma Tabela de Contingência para exemplificar melhor.
+# A tabela a seguir mostra o número de alunos admitidos em cursos de graduação em Engenharia e Medicina em 3 cidades brasileiras:
+
+#    Cidade         Engenharia         Medicina           Total
+
+#     RJ               1500              2300              3800
+#     SP               5600              7500             13100
+#     MG                980              1400              2380
+#    Total             8080             11200             19280
+
+
+# Agora vamos definir os eventos da tabela acima em análise:
+
+# -> Evento A - estudante do RJ admitido em curso de Engenharia ou Medicina
+# -> Evento B - estudante de qualquer cidade admitido em Engenharia.
+
+# - Como estamos considerando uma união dos eventos, tanto um como outro pode ocorrer.
+
+
+# Calculando evento A:     1500 + 2300    = 3800
+
+# Calculando evento B:  1500 + 5600 + 980 = 8080
+
+
+# Com base nisso, a soma dos eventos A e B é 3800 + 8080 = 11880
+
+
+# A probabilidade do evento A ou B ocorrer é:
+
+# P(A ou B) = 11880 / 19280 = 0.62 x 100 = 62%
 
 
 
