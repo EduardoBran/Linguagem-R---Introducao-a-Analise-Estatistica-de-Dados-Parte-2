@@ -261,7 +261,9 @@ print(0.076*100)
 
 
 
-#### Intersecção de Eventos: a intersecção de eventos A e B representam o número de vezes que os eventos A e B ocorrem ao mesmo tempo.
+#######  Intersecção de Eventos 
+
+# - A intersecção de eventos A e B representam o número de vezes que os eventos A e B ocorrem ao mesmo tempo.
 
 
 # Vamos usar uma Tabela de Contingência para exemplificar melhor.
@@ -329,8 +331,10 @@ probabilidade_c = df_evento_c / 19280  # 7500 / 19280   ou seja 39%
 
 
 
-#### União de Eventos: a união dos Eventos A e B representam o nº de vezes em que o evento A ou evento B ocorrem juntos.
-#                      (diferente da intersecção que é quando o evento ocorre ao mesmo tempo).
+#######  União de Eventos:
+
+# - A união dos Eventos A e B representam o nº de vezes em que o evento A ou evento B ocorrem juntos.
+#   (diferente da intersecção que é quando o evento ocorre ao mesmo tempo).
 
 
 # Vamos usar uma Tabela de Contingência para exemplificar melhor.
@@ -367,15 +371,92 @@ probabilidade_c = df_evento_c / 19280  # 7500 / 19280   ou seja 39%
 
 
 
+#### Adição de Eventos:
+
+# - A Regra de Adição em probabilidade é usada para calcular a probabilidade de união de eventos, ou seja, a probabilidade
+#   do Evento A mais Evento B ocorrerem.
+
+
+# - Antes, precisamos entender dois conceitos muito importantes:
+
+#  -> Eventos Mutuamente Exclusivos:      são aqueles que NÃO podem ocorrer ao mesmo tempo durante um experimento.
+# A fórmula é: P(A ou B) = P(A) + P(B).
+
+#  -> Eventos Não Mutuamente Exclusivos:  são aqueles que podem ocorrer ao mesmo tempo durante um experimento.
+# A fórmula é: P(A ou B) = P(A) + P(B) - P(A e B).
+
+
+# - A Regra da Adição depende se 2 eventos são ou não mutuamente exclusivos.
+
+
+# Exemplo: Evento Mutuamente Exclusivo
+
+#    Nota final         Homens           Mulheres           Total
+
+#       95                60                30               90
+#       90                40                80              120
+#       85                 0                40               40
+#      Total             100               150              250
+
+
+df <- data.frame(nota_final = c(95, 90, 85, 'Total'), homens = c(60, 40, 0, 100),
+                 mulheres = c(30, 80, 40, 150), total = c(90, 120, 40, 250))
+View(df)
+
+
+# Agora vamos definir os eventos da tabela acima em análise:
+
+# -> Evento A - estudante com nota final igual a 90.
+# -> Evento B - estudante com nota final igual a 85.
+
+# - Agora devemos definir qual regra da adição utilizar.
+# - Observando os eventos, constatamos que são Mutamente Exclusivos, pois um estudante NÃO pode obter notas 90 e 85 no mesmo exame.
+#   Com isso utilizamos a fórmula de eventos mutuamente exclusivos
+
+# Calculando evento A:  P(A) = 120 / 250 = 0.48 x 100 = 48%
+
+# Calculando evento B:  P(B) =   40 / 250 = 0.16 x 100 = 16%
+
+# Aplicando a regra temos:  P(A ou B) = P(A) + P(B) = 0.48 + 0.16 = 0.64 x 100 = 64%
+
+# Ou seja, 64% de probabilidade de um estudante ter a nota final igual a 85 ou 90.
 
 
 
+# Exemplo: Evento Não Mutuamente Exclusivo
+
+#    Nota final         Homens           Mulheres           Total
+
+#       95                60                30               90
+#       90                40                80              120
+#       85                 0                40               40
+#      Total             100               150              250
 
 
+df <- data.frame(nota_final = c(95, 90, 85, 'Total'), homens = c(60, 40, 0, 100),
+                 mulheres = c(30, 80, 40, 150), total = c(90, 120, 40, 250))
+View(df)
 
 
+# Agora vamos definir os eventos da tabela acima em análise:
+
+# -> Evento A - estudante com nota final igual a 90.
+# -> Evento B - estudante é do sexo feminino.
+
+# - Agora devemos definir qual regra da adição utilizar.
+# - Observando os eventos, constatamos que são Não Mutamente Exclusivos, pois um estudante pode obter nota 90 e ser do sexo feminino.
 
 
+# Calculando evento A:              P(A) = 120 / 250 = 0.48 x 100 = 48%
+
+# Calculando evento B:              P(B) = 150 / 250 = 0.60 x 100 = 60%
+
+# Calculando Intersecção de A e B:  P(A e B) = 80 / 250 = 0.32 x 100 = 32%
+
+
+# Aplicando a regra temos:  P(A ou B) = P(A) + P(B) - P(A e B) = 0.48 + 0.60 - 0.32 = 0.76 x 100 = 76%
+
+# Ou seja, 76% de probabilidade de uma estudante do sexo feminino obter 90 como nota final.
 
 
 
