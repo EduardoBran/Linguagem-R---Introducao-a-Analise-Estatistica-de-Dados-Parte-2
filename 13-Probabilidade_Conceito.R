@@ -460,8 +460,73 @@ View(df)
 
 
 
+# Exemplo 2
+
+df <- data.frame(eventoA = c("Tirar um ás", "Tirar uma carta vermelha", "Tirar um número par", "Tirar um número primo"),
+                 eventoB = c("Tirar um rei", "Tirar uma carta preta", "Tirar um número ímpar", "Tirar um número composto"),
+                 eventoC = c("Tirar uma carta de copas", "Tirar uma carta de paus", "Tirar um número múltiplo de 3", "Tirar um número positivo"))
+
+
+# Exercício 1 - Eventos Mutuamente Exclusivos:
+#               Suponha que temos os eventos A e B, onde A representa tirar um ás e B representa tirar um rei de um baralho. Usando o dataframe 
+#               criado, calcule a probabilidade de ocorrer o evento A ou o evento B.
+
+# -> Evento A - evento A representa tirar um ás de um baralho
+# -> Evento B - evento B representa tirar um rei de um baralho
+
+
+# Calculando Evento A:    P(A) = 1 / 4 = 0.25
+# Calculando Evento B:    P(A) = 1 / 4 = 0.25
+
+# Aplicando a regra temos:  P(A ou B) = P(A) + P(B) = 0.25 + 0.25 = 0.50 x 100 = 50%
+
+# Ou seja, 50% de probabilidade de ocorrer o evento A ou o evento B.
+
+
+
+# Exercício 2 - Eventos Não Mutuamente Exclusivos:
+#               Suponha que temos os eventos A e C, onde A representa tirar um ás de um baralho e C representa tirar uma carta de copas.
+#               Usando o dataframe criado, calcule a probabilidade de ocorrer o evento A ou o evento C.
+
+
+# Calculando Evento A:              P(A) = 1 / 4 = 0.25
+# Calculando Evento B:              P(A) = 1 / 4 = 0.25
+# Calculando Intersecção de A e B:  P(A e B) = 2 / 4 = 0.50 x 100 = 50%
+
+# Aplicando a regra temos:  P(A ou B) = P(A) + P(B) - P(A e B) = 1 + 1 - 2 = 0 x 100 = 0%
+
+# Ou seja, 0% de probabilidade de t
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+summary(df)
+
+# Exemplo de DataFrame
+df <- data.frame(coluna1 = c("A", "B", "C", "A", "B"),
+                 coluna2 = c(1, 2, 3, 4, 5),
+                 coluna3 = c(TRUE, FALSE, TRUE, TRUE, FALSE))
+
+# Função para contar o número de tipos em cada coluna
+contar_tipos <- function(coluna) {
+  length(unique(coluna))
+}
+
+# Aplicar a função contar_tipos a cada coluna do DataFrame
+num_tipos_por_coluna <- sapply(df, contar_tipos)
+
+# Exibir o resultado
+print(num_tipos_por_coluna)
