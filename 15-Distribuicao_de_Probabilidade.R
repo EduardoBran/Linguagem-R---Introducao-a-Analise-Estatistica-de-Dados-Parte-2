@@ -38,7 +38,22 @@ getwd()
 #   do Cientista de Dados aplicar normalização (deixar os dados em um formato normal).
 
 
+## Conceito sobre Função, Imagem e Domínio da Teoria dos Conjuntos
 
+# Na teoria dos conjuntos, uma função é uma regra que associa cada elemento de um conjunto (chamado domínio) a um único elemento de outro 
+# conjunto (chamado contradomínio ou conjunto imagem). Em outras palavras, uma função estabelece uma correspondência entre elementos de dois
+# conjuntos de forma que cada elemento do domínio seja relacionado a apenas um elemento do contradomínio.
+
+# O domínio de uma função é o conjunto de todos os elementos de partida ou entrada da função, ou seja, são os valores para os quais a função
+# está definida e pode ser aplicada. Já a imagem da função é o conjunto de todos os elementos de chegada ou saída da função, ou seja, são os
+# valores que a função pode assumir após aplicar a regra de associação.
+
+# Quando uma função é aplicada a um elemento específico do domínio, ela produz um único elemento no conjunto imagem correspondente. Essa relação
+# unívoca é uma das características fundamentais das funções. No entanto, nem todos os elementos do contradomínio podem ser atingidos pela função,
+# e a imagem é um subconjunto do contradomínio.
+
+# Em resumo, uma função é uma correspondência entre dois conjuntos que associa cada elemento do domínio a um único elemento do conjunto imagem,
+# e o domínio é o conjunto de entrada da função, enquanto a imagem é o conjunto de saída.
 
 
 
