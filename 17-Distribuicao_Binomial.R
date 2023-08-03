@@ -50,7 +50,7 @@ getwd()
 #          Suponha que tenhamos 5 pacientes que sofrem um ataque cardíaco, qual é a probabilidade de que todos sobrevivam ?
 
 # - Para este exemplo, vamos chamar de sucesso um ataque fatal (p = 0.04).
-#   Temos n = 5 pacientes e queremos saber a probabilidade de que todos sobrevivam, ou em outrs palavras, que nenhum seja fatal (0 sucessos).
+#   Temos n = 5 pacientes e queremos saber a probabilidade de que todos sobrevivam, ou em outras palavras, que nenhum seja fatal (0 sucessos).
 
 
 # X = Número de sobreviventes ao ataque
