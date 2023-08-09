@@ -68,7 +68,7 @@ sd(dados2)
 sd(dados3)
 
 # dados2 tem um desvio padrão de  0.7418811 e por isso tem uma menor variabilidade dos valores.
-# dados3 tem um desvio padrão de  4724062e por isso tem uma altavariabilidade dos valores.
+# dados3 tem um desvio padrão de  4724062e por isso tem uma alta variabilidade dos valores.
 
 
 

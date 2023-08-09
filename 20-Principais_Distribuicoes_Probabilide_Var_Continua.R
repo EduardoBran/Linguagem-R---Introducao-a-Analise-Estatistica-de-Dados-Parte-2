@@ -1,4 +1,4 @@
-# # Exemplos das Principais Distribuições de Probabilidade para Variáveis Aleatórias Contínuas
+# Exemplos das Principais Distribuições de Probabilidade para Variáveis Aleatórias Contínuas
 
 
 # Configurando o diretório de trabalho
