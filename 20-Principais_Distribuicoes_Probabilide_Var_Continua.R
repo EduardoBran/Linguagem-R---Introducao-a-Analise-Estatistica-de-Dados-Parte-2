@@ -20,8 +20,38 @@ getwd()
 #  -> Distribuição Uniforme
 
 
+
 ## Distribuição Normal
 
 # - É a mais importante de todas, seja entre as discretas ou as contínuas.
 #   É útil quando os dados tendem a estar próximos ao centro da distribuição (próximos da média) e quando valores extremos (outliers) são
 #   muito raros.
+
+# - Como a Distribuição de Probabilidade Normal é muito comum, ela é a ferramenta usada para calcular diversas estatísticas inferenciais, sendo
+#   muito importante em Machine Learning.
+
+# - Usamos a Distribuição Normal o 'tempo inteiro', sendo quando aplicamos normalização, seja quando interpretamos os dados, seja quando
+#   precisamos transformar os dados e depois então aplicar modelagem preditiva.
+
+
+# - Em geral, quando temos algum tipo específico de distribuição, nós acabmos aplicando normalização e assim colocar a distribuição em uma
+#   Distribuição Normal e depois realizar o trabalho de Modelagem.
+
+
+
+## Distribuição Exponencial
+
+# - É usada para descrever os dados quando valores mais baixos tendem a dominar a distribuição e quando valores muito altos não ocorrem com
+#   frequência. 
+
+# - Ou seja, é quando tempos uma desproporção entre valores altos e baixos.
+
+
+
+## Distribuição Uniforme
+
+# - É usada para descrever os dados quando todos os valores têm a mesma chance de ocorrer.
+
+
+
+

@@ -119,8 +119,8 @@ prob_3min
 # Ex2: Suponha que, em média, ocorram 2 acidentes de trânsito por dia em um cruzamento. Qual é a probabilidade de ocorrerem
 #      exatamente 4 acidentes em um dia?
 
-prob <- dpois(4, lambda = 2)
-prob
+prob_4_ac <- dpois(4, lambda = 2)
+prob_4_ac
 
 # - A probabilidade é de 9.02% de ocorrerem exatamente 4 acidentes em um dia.
 
