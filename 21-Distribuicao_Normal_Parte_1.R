@@ -1,4 +1,4 @@
-# Distribuição Normal
+# Distribuição Normal (Parte 1)
 
 
 # Configurando o diretório de trabalho
