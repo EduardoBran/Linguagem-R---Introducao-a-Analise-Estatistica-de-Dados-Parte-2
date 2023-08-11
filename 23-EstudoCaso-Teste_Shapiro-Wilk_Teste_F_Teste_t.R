@@ -66,5 +66,55 @@ head(sleep)
 
 
 
+## Validando a suposição 4
+
+
+# Técnica mais simples utilizando qqPlot (pacote car)
+
+# Extrair dados de um dos grupos
+
+grupo_dois <- sleep$group == 2
+grupo_dois
+
+# Validando com qqPlot
+
+qqPlot(sleep$extra[grupo_dois])
+qqPlot(sleep$extra[! grupo_dois])   # nega grupo dois e pega o grupo 1
+
+
+# Interpretando -> No grafico acima do grupo dois temos uma linha que indica a orientação dos dados, as bolinahs que são os pontos de dados
+#                  e faixa em azul são os intervalo de confiança. Se os pontos de dados (bolinhas) estão dentro do intervalo, provavelmente é
+#                  uma Distribuição Normal.
+#                  No grafico que nega o grupo dois indica o mesmo racíocio e mostra as bolinhas também dentro da faixa.
+#                  No fim isso serve mais para documentar o trabalho, ter uma visão gráfica.
+
+
+# - Por ser mais seguro, é mais aconselhável a aplicar o teste estatístico.
+
+
+# Teste de Normalidade shapiro.test()
+
+# - Para dizer que uma distribuição é normal, o valor-p precisa ser maior do que 0.05.
+# - H0 = Os dados seguem uma distribuição normal.
+
+shapiro.test(sleep$extra[grupo_dois])    # valor-p = 0.3511 (ou seja, maior que 0.05)
+shapiro.test(sleep$extra[! grupo_dois])  # valor-p = 0.4079 (ou seja, maior que 0.05)
+
+
+# Interpretando -> O valor-p do teste de cada grupo é maior que 0.05 e então falhamos em rejeitar a H0. Neste caso consideramos H0 validada.
+#                  Podemos assumir que os dados seguem uma distribuição normal.
+
+
+
+## Validando a suposição 5 com Teste F
+
+
+
+
+
+
+
+
+
 
 
