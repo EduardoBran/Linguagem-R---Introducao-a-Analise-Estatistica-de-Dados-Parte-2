@@ -108,15 +108,71 @@ shapiro.test(sleep$extra[! grupo_dois])  # valor-p = 0.4079 (ou seja, maior que 
 
 ## Validando a suposição 5 com Teste F
 
-# Primeiro checamos se há valores ausentes
+# Primeiro checamos se há valores ausentes (importante não ter valores ausentes, caso tenha, tratar primeiro e depois aplicar o teste)
+
 colSums(is.na(sleep)) 
 
-# Vejamos um resumo estatístico do dataset
+
+# Vejamos primeiro um resumo estatístico do dataset
+
 sleep %>% group_by(group) %>%
   summarise(
     count = n(),
-    mean = mean(extra, na.rm = TRUE),
-    sd = sd(extra, na.rm = TRUE))
+    mean = mean(extra, na.rm = TRUE),          # na.rm = TRUE é usado em várias funções estatísticas no R para indicar que valores ausentes (NA)
+    sd = sd(extra, na.rm = TRUE))              # devem ser removidos.
+
+
+# - Foi calcudo um resumo estatístico do conjunto de dados usando a função summarise() do pacote dplyr. O resumo inclui informações sobre
+#   a contagem de observações (count), a média (mean), e o desvio padrão (sd) da variável extra, agrupadas por group.
+
+# - O resultado dessa análise permitirá que você avalie a homogeneidade de variância entre os grupos e determine se é apropriado prosseguir com o
+#   teste t. Se os desvios padrão entre os grupos forem significativamente diferentes, a suposição de homogeneidade de variância pode ser violada,
+#   o que pode afetar a interpretação dos resultados do teste t.
+
+
+# - Para rejeitar a hipóteste nula de que as médias do grupo são iguais, precisamos de um valor F alto (maior que 0.05).
+# - H0 = As médias de dados extraídos de uma população normalmente distrbuída tem a mesma variância.
+
+
+# Utilizando var.teste() para o teste f
+
+resultado_teste_f <- var.test(data = sleep, extra ~ group)
+
+resultado_teste_f                                            # F = 0.79834, num df = 9, denom df = 9, p-value = 0.7427
+
+
+# Interpretando -> O valor-p do teste é de 0.7427, logo, maior que que 0.05. Falhamos em rejeitar a H0.
+#                  Podemos assumir que não há diferença significativa entre as variâncias dos 2 grupos.
+
+
+# Suposições validadas. Agora podemos aplicar o Teste t (comparar as médias de 2 grupos)
+
+
+# - Aplicando Teste t para responder a questão: "H0 (hipóteste nula) - Não há diferença significativa entre a média dos 2 grupos."
+
+resultado_teste_t <- t.test(data = sleep, extra ~ group, var.equal = TRUE)    # var.equal variancia = TRUE
+
+resultado_teste_t                 # t = -1.8608, df = 18, p-value = 0.07919
+
+
+# Análise Final
+
+# - O valor-p do teste é de 0.07919, logo, maior que 0.05. Falhamos em rejeitar a H0.
+# - Podemos concluir que os 2 grupos NÃO tem diferença significativa.
+
+# - Logo não há diferença significativa entre os medicamentos aplicados para tratar distúrbios de sono.
+
+
+
+
+
+
+
+# - Quando não conseguimos validar as suposições, não usamos teste paramétrico.
+#   Utilizamos então testes não paramétricos, que é usado justamente quando não conseguimos validar as suposições.
+#   E assim temos outras forma de aplicar o teste e interpretar o resultado.
+
+
 
 
 
