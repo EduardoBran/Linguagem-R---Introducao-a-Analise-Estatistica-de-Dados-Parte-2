@@ -108,12 +108,15 @@ shapiro.test(sleep$extra[! grupo_dois])  # valor-p = 0.4079 (ou seja, maior que 
 
 ## Validando a suposição 5 com Teste F
 
+# Primeiro checamos se há valores ausentes
+colSums(is.na(sleep)) 
 
-
-
-
-
-
+# Vejamos um resumo estatístico do dataset
+sleep %>% group_by(group) %>%
+  summarise(
+    count = n(),
+    mean = mean(extra, na.rm = TRUE),
+    sd = sd(extra, na.rm = TRUE))
 
 
 
