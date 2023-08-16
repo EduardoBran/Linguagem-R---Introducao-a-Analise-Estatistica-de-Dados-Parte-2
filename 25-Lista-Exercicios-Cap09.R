@@ -10,6 +10,8 @@ getwd()
 
 # Exercício 1 - Gere 1000 números de uma distribuição normal com média 3 e sd = .25 e grave no objeto chamado x.
 
+x <- rnorm(1000, mean = 3, sd = .25)
+x
 
 
 
@@ -18,6 +20,8 @@ getwd()
 
 # Exercício 2 - Crie o histograma dos dados gerados no item anterior e adicione uma camada com a curva da normal.
 
+hist(x, probability = TRUE)
+curve(dnorm(x, mean = mean(x), sd = sd(x)), add = TRUE, col = "blue")
 
 
 
@@ -25,9 +29,23 @@ getwd()
 
 
 # Exercício 3 - Suponha que 80% dos adultos com alergias relatem alívio sintomático com uma medicação específica. 
-# Se o medicamento é dado a 10 novos pacientes com alergias, qual é a probabilidade de que ele seja 
-# eficaz em exatamente sete?
+#               Se o medicamento é dado a 10 novos pacientes com alergias, qual é a probabilidade de que ele seja 
+#               eficaz em exatamente sete? (Distribuição Binomial)
 
+res <- dbinom(7, size = 10, prob = 0.80)
+res
+
+# - A probabilidade é de 20.13%
+
+## função para gerar gráfico
+graph <- function(n,p){
+  x <- dbinom(0:n,size=n,prob=p)
+  barplot(x,ylim=c(0,0.4),names.arg=0:n,
+          main=sprintf(paste('Binomial Distribution(n,p) ',n,p,sep=',')))
+}
+
+## chamando gráfico
+graph(10, 0.8)
 
 
 
@@ -35,9 +53,8 @@ getwd()
 
 
 # Exercício 4 - Suponha que os resultados dos testes de um vestibular se ajustem a uma distribuição normal. 
-# Além disso, a pontuação média do teste é de 72 e o desvio padrão é de 15,2. 
-# Qual é a porcentagem de alunos que pontuaram 84 ou mais no exame?
-
+#               Além disso, a pontuação média do teste é de 72 e o desvio padrão é de 15,2. 
+#               Qual é a porcentagem de alunos que pontuaram 84 ou mais no exame?
 
 
 
