@@ -147,7 +147,7 @@ View(ChickWeight)
 
 # - Verificar se há diferenças significativas nas médias e variâncias da variável 'weight' em relação à variável 'Diet'.
 # - Essa análise estatística permitirá determinar se existem diferenças estatisticamente significativas nas médias e variâncias da variável
-#   'weight' em relação ao tipo de 2 dietas diferentes.
+#   'weight' em relação ao tipo de 2 dietas diferentes (dieta tipo 1 e dieta tipo 2).
 
 
 ## Validando a suposição 4 (primeiro aplicando qqPlot do pacote car e depois aplicando teste estatístico Shapiro-Wilk) 
@@ -166,5 +166,22 @@ qqPlot(ChickWeight$weight[grupo_um])
 qqPlot(ChickWeight$weight[grupo_dois])
 
 
-# Interpretando -> 
+# Interpretando -> Podemos observar que nem todos os dados seguem uma distribuição normal.
 
+
+# Aplicando teste Shapiro-Wilk (Para dizer que uma distribuição é normal, o valor-p precisa ser maior do que 0.05.)
+
+shapiro.test(ChickWeight$weight[grupo_um])       # p-value = 2.211e-11 (ou seja, menor que 0.05)
+shapiro.test(ChickWeight$weight[grupo_dois])     # p-value = 3.159e-07 (ou seja, menor que 0.05)
+
+
+# Análise Final
+
+# - Os testes de Shapiro-Wilk indicaram que as distribuições de 'weight' para ambos os grupos (dieta tipo 1 e dieta tipo 2) não seguem uma
+#   distribuição normal. Portanto, não podemos assumir que os dados tenham uma distribuição normal.
+# - Podemos afirmar que as distribuições de 'weight' diferem significativamente da normalidade para ambos os tipos de dieta.
+
+
+
+# - Poderíamos então a partir daqui considerar métodos estatísticos não paramétricos ou outras abordagens para realizar análises e comparações
+#   estatísticas.
