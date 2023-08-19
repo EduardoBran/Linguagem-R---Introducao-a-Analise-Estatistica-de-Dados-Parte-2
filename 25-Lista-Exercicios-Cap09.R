@@ -1,5 +1,9 @@
 # Lista de Exercícios - CAP 09
 
+library(dplyr)
+
+
+
 
 # Configurando o diretório de trabalho
 setwd("C:/Users/Julia/Desktop/CienciaDeDados/1.Big-Data-Analytics-com-R-e-Microsoft-Azure-Machine-Learning/9.Introducao-a-Analise-Estatistica-de-Dados---Parte-2")
@@ -97,6 +101,56 @@ percentage_exact_87_2                                  # 1.612858
 
 
 
+# Exercício 4.1 -  Criando dataframe do exemplo anterior para responder as perguntas:
+#                  Qual porcentagem dos alunos ficaram acima da média requerida (70) ? 
+#                  Qual a porcentagem dos alunos que ficaram acima de 80 ?
+#                  Qual a porcentagem dos alunos que ficaram acima de 90 ?
+#                  Qual a porcentagem dos alunos que ficaram abaixo de 50 ?
+
+
+# gera 100 números aleatórios que estejam dentro do intervalo de 0 a 100
+aleatorios <- rnorm(1000, mean = 72, sd = 15.2)
+aleatorios <- pmax(0, pmin(100, aleatorios))
+
+# criando dataframe
+notas <- data.frame(id = 1:1000, notas = aleatorios)
+View(notas)
+
+# resumo estatístico
+notas_summarize <- 
+  notas %>% 
+  summarise(media_nota = mean(notas),
+            desvio = sd(notas))
+notas_summarize
+
+# respondendo as perguntas
+
+porcentage_acima_70 <- pnorm(70, mean = mean(notas$notas), sd = sd(notas$notas), lower.tail = FALSE)
+porcentage_acima_70 * 100  # 56.91
+
+porcentage_acima_80 <- pnorm(80, mean = mean(notas$notas), sd = sd(notas$notas), lower.tail = FALSE)
+porcentage_acima_80 * 100  # 30.73
+
+porcentage_acima_90 <- pnorm(90, mean = mean(notas$notas), sd = sd(notas$notas), lower.tail = FALSE)
+porcentage_acima_90 * 100  # 11.87
+
+porcentage_abaixo_50 <- pnorm(50, mean = mean(notas$notas), sd = sd(notas$notas))
+porcentage_abaixo_50 * 100 # 6.30
+
+
+# respondendo
+
+# - alunos que ficaram com nota acima de 70 representam 56.91%.
+# - alunos que ficaram com nota acima de 80 representam 30.73%
+# - alunos que ficaram com nota acima de 90 representam 11.87%.
+# - alunos que ficaram com nota abaixo de 50 representam 6.30%.
+
+
+
+
+
+
+
 # Exercício 5 - Suponha que o tempo médio de check-out de um caixa de supermercado seja de três minutos. 
 #               Encontre a probabilidade de um check-out do cliente ser concluído pelo caixa em menos de dois minutos.
 
@@ -115,7 +169,7 @@ pexp(2, rate=1/3)
 
 
 # Exercício 6 - Suponha que o tempo médio de que um atendendente de hotel seja atender 2 clientes a cada 5 minutos.
-#               Encontre a probabilidade de um do atendente atender 2 clientes seja de 3 minutos.
+#               Encontre a probabilidade de o atendente atender 2 clientes seja de 3 minutos.
 
 pexp(3, rate=2/5)
 
@@ -170,25 +224,69 @@ x
 
 
 
-
-# Exercício 10 - Suponha que, em média, 12 carros atravessem uma ponte por minuto. Encontre a probabilidade de ter 15 ou mais carros cruzando
+# Exercício 10 - Suponha que, em média, 12 carros atravessem uma ponte por minuto. Encontre a probabilidade de ter 14 ou menos carros cruzando
 #                a ponte em um determinado minuto.
 
+ppois(14, lambda = 12)
+
+# - A probabilidade é de 77.20%.
+
+# Explicação
+# - Este cálculo ppois(14, lambda = 12) calcula a probabilidade acumulada até 14 carros, o que é o equivalente a ter 14 ou menos carros.
 
 
 
 
 
 
-# Exercício 11 - Suponha que haja 12 questões de múltipla escolha em um questionário de inglês. 
+# Exercício 11 - Suponha que, em média, 12 carros atravessem uma ponte por minuto. Encontre a probabilidade de ter 15 ou mais carros cruzando
+#                a ponte em um determinado minuto.
+
+ppois(15, lambda=12, lower = FALSE)
+
+# - A probabilidade é de 15.55%.
+
+# Explicação 
+# - Para obter a probabilidade de ter 15 ou mais carros, você deve calcular a probabilidade acumulada até 15 e subtrair da probabilidade acumulada 
+#   até 14.
+# - Este cálculo ppois(15, lambda = 12, lower = FALSE) calcula exatamente isso, a probabilidade de ter 15 ou mais carros cruzando a ponte em um
+#   determinado minuto usando a distribuição de Poisson com uma média de 12 carros.
+
+
+
+
+
+
+
+# Exercício 12 - Suponha que haja 12 questões de múltipla escolha em um questionário de inglês. 
 #                Cada questão tem cinco respostas possíveis e apenas uma delas está correta. 
 #                Encontre a probabilidade de ter quatro ou menos respostas corretas se um aluno tentar responder a cada pergunta 
 #                aleatoriamente.
 
+# Defina os parâmetros
+numero_questoes <- 12
+probabilidade_correta <- 1/5
+numero_respostas_corretas <- 4
 
+# Calcule a probabilidade acumulada até 4 respostas corretas
+probabilidade <- pbinom(numero_respostas_corretas, size = numero_questoes, prob = probabilidade_correta)
 
+# Exiba a probabilidade
+probabilidade
 
+# - A probabilidade é de aproximadamente 92.74% de ter quatro ou menos respostas corretas em 12 questões, considerando respostas aleatórias com
+#   uma probabilidade de resposta correta de 0,2.
 
+# Explicação
+# - Nesse exercício, estamos lidando com um problema de distribuição binomial, onde temos um número fixo de ensaios independentes (cada pergunta
+#   do questionário) e cada ensaio tem duas opções (resposta correta ou incorreta). A probabilidade de sucesso (resposta correta) é de 1/5,
+#   já que há cinco respostas possíveis e apenas uma está correta.
+
+# - Nesse código, estamos usando a função pbinom() para calcular a probabilidade acumulada de ter 4 ou menos respostas corretas em 12 questões
+#   de múltipla escolha com uma probabilidade de resposta correta de 1/5.
+
+# - Lembre-se de que a probabilidade pode ser calculada para 0, 1, 2, 3 ou 4 respostas corretas, pois estamos interessados em até quatro 
+#   respostas corretas.
 
 
 
